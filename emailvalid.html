@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <input type ="text" id ="email" placeholder="Enter email address()">
+        <p id ="message"></p>
+        <script>
+            let email=document.getElementById("email");
+            email.addEventListener("input",function(){
+                //let str=email.value.toUpperCase();
+                let str=email.value.toLowerCase();
+                const emailregex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if(emailregex.test(str)){
+                    document.getElementById("message").innerHTML="Valid email";
+                    document.getElementById("message").style="color:green";
+                }else{
+                    document.getElementById("message").innerHTML="InValid email";
+                    document.getElementById("message").style="color:red";
+                }
+            })
+        </script>
+    </body>
+</html>
